@@ -100,9 +100,10 @@ Convert the topic to kebab-case:
 - "login flow" → `login-flow.md`
 
 ### Output path
-`Investigators/[kebab-case-topic].md`
+If the request includes a "workspace root" path, write to `{workspace root}/Investigators/[kebab-case-topic].md`.
+Otherwise fall back to `Investigators/[kebab-case-topic].md` relative to the current working directory.
 
-The `Investigators/` directory will be created automatically by the Write tool if it doesn't exist.
+Never write the output file inside a subfolder of the project being investigated. The `Investigators/` folder always belongs at the workspace root.
 
 ---
 
