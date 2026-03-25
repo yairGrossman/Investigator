@@ -20,25 +20,34 @@ Two modes:
 ## Install
 
 ### Project-level (available only in this repo)
-The agent is already in `.claude/agents/investigator.md` — Claude Code picks it up automatically.
+The agent and command are already in `.claude/` — Claude Code picks them up automatically.
 
 ### User-level (available in all your projects)
 
 **macOS / Linux:**
 ```bash
 cp .claude/agents/investigator.md ~/.claude/agents/investigator.md
+cp .claude/commands/investigate.md ~/.claude/commands/investigate.md
 ```
 
 **Windows:**
 ```powershell
 Copy-Item .claude\agents\investigator.md "$env:USERPROFILE\.claude\agents\investigator.md"
+Copy-Item .claude\commands\investigate.md "$env:USERPROFILE\.claude\commands\investigate.md"
 ```
 
 ---
 
 ## Usage
 
-Invoke the agent with `@investigator` followed by your request. You can specify a `from` point, a `to` point, both, or neither.
+Two ways to invoke — they do the same thing:
+
+| Style | Example |
+|-------|---------|
+| `/investigate` (slash command) | `/investigate how does the counter flow from the UI to the server?` |
+| `@investigator` (direct agent) | `@investigator how does the counter flow from the UI to the server?` |
+
+You can specify a `from` point, a `to` point, both, or neither.
 
 ### Trace a full data flow
 ```
